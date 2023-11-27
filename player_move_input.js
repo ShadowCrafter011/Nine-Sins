@@ -87,7 +87,7 @@ MousY = e.y
 if(entities.length == 0){
 
 
-  if(Difficulti.DifM == false){
+  if(difficulty.DifM == false){
   swellTF = 0
   for(i=0;i<activCard.length;i++){
     let y =
@@ -112,19 +112,19 @@ if(entities.length == 0){
 
 }else{
   swellTF =0
-  let {x,y,xw,yw,space} = Difficulti
+  let {x,y,xw,yw,space} = difficulty
   for(i=0;i<4;i++){
 if(Math.abs(x-e.x)<xw/2&&Math.abs(y+(yw+space-space/4)*(i-2)+yw/2-e.y)<yw/2){
   
-  let {x,y,xw,yw,space} = Difficulti
+  let {x,y,xw,yw,space} = difficulty
   
-  Difficulti.Xswell = x-xw/2
-  Difficulti.Yswell = y+(yw+space-space/4)*(i-2)
-  Difficulti.swelltrue = true
+  difficulty.Xswell = x-xw/2
+  difficulty.Yswell = y+(yw+space-space/4)*(i-2)
+  difficulty.swelltrue = true
 }else{
   swellTF -=1
 }  if (swellTF == -4){
-  Difficulti.swelltrue = false
+  difficulty.swelltrue = false
 }
 
 
@@ -143,7 +143,7 @@ window.addEventListener("click",function (e){
 
 
 
-  if(Difficulti.DifM == false){
+  if(difficulty.DifM == false){
     
     audioNight.play();
 
@@ -167,7 +167,7 @@ window.addEventListener("click",function (e){
       }
     }
    } else{
-  let {x,y,xw,yw,space} = Difficulti
+  let {x,y,xw,yw,space} = difficulty
 
 
     for(g=0;g<4;g++){
@@ -178,24 +178,24 @@ window.addEventListener("click",function (e){
   
 
   if(g==0){
-   Player.lifes = Difficulti.Dif1
+   Player.lifes = difficulty.Dif1
    EndDiff=1
   
  }else if(g==1){
-  Player.lifes = Difficulti.Dif2
+  Player.lifes = difficulty.Dif2
   EndDiff=2
  }else if(g==2){
-  Player.lifes = Difficulti.Dif3
+  Player.lifes = difficulty.Dif3
   EndDiff=3
  }else if(g==3){
-  Player.lifes = Difficulti.Dif4
+  Player.lifes = difficulty.Dif4
   EndDiff=4
  }
-Difficulti.currentLives  = Player.lifes
+difficulty.currentLives  = Player.lifes
 
 
 W9()
- Difficulti.DifM=false
+ difficulty.DifM=false
 
 
 
